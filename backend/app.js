@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const bookRoutes = require('./routes/book');
+const userRoutes = require('./routes/user');
 
 mongoose.connect('mongodb+srv://samybensalem_db_user:EJwo8lsKaKDgoRPx@cluster0.sssk3t2.mongodb.net/grimoire?appName=Cluster0')
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/books', bookRoutes);
+app.use('/api/auth', userRoutes);
 
 module.exports = app;
 
