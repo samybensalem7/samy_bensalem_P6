@@ -12,11 +12,11 @@ const normalizePort = val => {
   }
   return false;
 };
-const port = normalizePort(process.env.PORT ||'4000');
+const port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
 
 const errorHandler = error => {
-  if (error.syscall !== 'listen') {
+  if (error.syscall !== 'listen') { 
     throw error;
   }
   const address = server.address();
